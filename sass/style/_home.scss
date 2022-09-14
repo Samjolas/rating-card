@@ -1,10 +1,113 @@
 @use 'variables' as a;
 
 
-.card {
+.card,
+.thanks {
   max-width: 42rem;
   width: calc(100% - 6rem);
   background: a.$color-bg-card;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  padding: 3.5rem;
+  gap: 2rem;
+  &__heading {
+    font-size: a.$fs-main;
+    color: a.$color-main;
+    font-weight: a.$fw-700;
+  }
+  &__description {
+    font-size: a.$fs-sub;
+    color: a.$color-sub;
+    font-weight: a.$fw-400;
+  }
+  &__rate {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  &__rating {
+    list-style-type: none;
+    width: 5rem; height: 5rem;
+    border-radius: 50%;
+    background: rgba(a.$color-sub-m, .2);
+    text-align: center;
+    line-height: 5rem;
+    font-size: a.$fs-sub;
+    &:hover {
+      background: a.$color-sub-m;
+      cursor: pointer;
+    }
+  }
+  &__btn {
+    display: inline-block;
+    width: 100%;
+    background: a.$color-accent;
+    height: 4.6rem; line-height: 4.6rem;
+    border-radius: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: a.$fs-sub;
+    font-weight: a.$fw-700;
+    color: a.$color-main;
+    &:hover {
+      background: a.$color-main;
+      color: a.$color-accent;
+    }
+  }
 }
+.card {
+  &__icon {
+    width: 5rem; height: 5rem;
+    border-radius: 50%;
+    background: rgba(a.$color-sub-m, .2);
+    padding: 1.6rem;
+  }
+}
+.thanks {
+  display: none;
+  text-align: center;
+  &__icon {
+    width: 55%;
+    margin: auto;
+  }
+
+  &__statement {
+    background: rgba(a.$color-sub-m, .2);
+    color: a.$color-accent;
+    font-size: a.$fs-sub;
+    width: 50%;
+    border-radius: 5rem;
+    padding: .5rem;
+    margin: auto;
+  }
+}
+
+@media (max-width : 400px) {
+  .card {
+    padding: 2.5rem;
+    &__rating {
+      width: 3.5rem; height: 3.5rem;
+      line-height: 3.5rem;
+    }
+    &__icon {
+      width: 3.5rem; height: 3.5rem;
+      padding: 1rem;
+      
+    }
+  }
+  .thanks {
+    &__statement {
+      background: rgba(a.$color-sub-m, .2);
+      color: a.$color-accent;
+      font-size: a.$fs-sub;
+      width: 100%;
+      border-radius: 5rem;
+      padding: .5rem;
+      margin: auto;
+    }
+  }
+}
+
 
 
